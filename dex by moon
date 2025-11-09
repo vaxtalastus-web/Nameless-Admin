@@ -21,7 +21,7 @@ local selection
 
 local function ClonedService(name)
     local Service = (game.GetService);
-	local Reference = (cloneref) or function(reference) return reference end
+	local Reference = (cloneref) or (clonereference) or function(reference) return reference end
 	return Reference(Service(game, name));
 end
 
@@ -11121,4 +11121,5 @@ Main = (function()
 end)()
 
 -- Start
+
 Main.Init()
