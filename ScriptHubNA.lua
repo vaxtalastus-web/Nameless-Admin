@@ -1,10 +1,10 @@
 local function Svc(n)
     local g = game.GetService
-    local rf = cloneref or function(v) return v end
+    local rf = cloneref or clonereference or function(v) return v end
     return rf(g(game, n))
 end
 
-local rq = request or http_request or (syn and syn.request) or function() end
+local rq = (http and http.request) or request or http_request or httprequest or syn_request or fluxus_request or (fluxus and fluxus.request) or (syn and syn.request) or function() end
 local tw = Svc("TweenService")
 local ui = Svc("UserInputService")
 local hs = Svc("HttpService")
@@ -711,4 +711,5 @@ openS.Scale = 0.9
 openS.Parent = fr
 fr.BackgroundTransparency = 1
 tw:Create(openS, TweenInfo.new(0.26, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Scale = 1}):Play()
+
 tw:Create(fr, TweenInfo.new(0.26, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundTransparency = 0}):Play()
